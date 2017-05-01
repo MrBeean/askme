@@ -1,24 +1,11 @@
-# README
+![ASKfm](http://about.ask.fm/wp-content/uploads/2015/01/ASKfm_logo_owl-1.png)
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Основные функции программы
 
-Things you may want to cover:
+  + Клон проекта [https://ask.fm/](https://ask.fm/)
+  
+## Разработчик
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+  [Сыроежкин Андрей](https://github.com/MrBeean)
+  
+###### Проект разработан как домашнее задание для школы программирования http://goodprogrammer.ru
