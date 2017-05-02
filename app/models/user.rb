@@ -5,14 +5,19 @@ class User < ApplicationRecord
   ITERATIONS = 20_000
   DIGEST = OpenSSL::Digest::SHA256.new
 
+  # Связь
   has_many :questions
 
+  # Проверки
   validates :username, :email, presence: true
   validates :username, :email, uniqueness: true
+  validates :email, :email => true
+  validates :username, length: { maximum: 40, message: "maximum 40 letters" }
+  validates :username, format: { with: /[a-zA-Z0-9\-_\.]/, message: "only allows letters" }
 
   attr_accessor :password
 
-  validates_presence_of :password, on: :creategst
+  validates_presence_of :password, on: :create
   validates_confirmation_of :password
 
   before_save :encrypt_password
