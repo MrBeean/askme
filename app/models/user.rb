@@ -9,11 +9,13 @@ class User < ApplicationRecord
   has_many :questions
 
   # Проверки
+  before_validation :username_downcase!
+
   validates :username, :email, presence: true
-  validates :username, :email, uniqueness: true
+  validates :email, :username, uniqueness: true
   validates :email, :email => true
-  validates :username, length: { maximum: 40, message: "maximum 40 letters" }
-  validates :username, format: { with: /[a-zA-Z0-9_]/, message: "only allows letters, numbers & _" }
+  validates :username, length: { maximum: 40, message: 'maximum 40 letters' }
+  validates :username, format: { with: /[a-zA-Z0-9_]/, message: 'only allows letters, numbers & _' }
 
   attr_accessor :password
 
@@ -72,5 +74,9 @@ class User < ApplicationRecord
 
     # Иначе, возвращаем nil
     nil
+  end
+
+  def username_downcase!
+    self.username.downcase!
   end
 end
