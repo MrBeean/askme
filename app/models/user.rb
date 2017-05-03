@@ -13,9 +13,9 @@ class User < ApplicationRecord
 
   validates :username, :email, presence: true
   validates :email, :username, uniqueness: true
-  validates :email, :email => true
+  validates :email, email: true
   validates :username, length: { maximum: 40, message: 'maximum 40 letters' }
-  validates :username, format: { with: /[a-zA-Z0-9_]/, message: 'only allows letters, numbers & _' }
+  validates :username, format: { with: /\A[A-Za-z0-9]+(?:[_][A-Za-z0-9]+)*\z/, message: 'only allows letters, numbers & _' }
 
   attr_accessor :password
 
