@@ -31,13 +31,24 @@
 
 <%# Блок отвечающий за вывод кол-ва вопросов %>
 <div class="user-question-block">
-  <% question_count = @questions.size %>
-  <div class="user-question-count-number">
-    <%= question_count %>
-  </div>
-  <div class="user-question-count-text">
-    <%= sklonenie(question_count, 'вопрос', 'вопроса', 'вопросов') %>
-  </div>
+    <div class="column-1-3">
+      <div class="user-question-count-number"><%= @questions_count %></div>
+      <div class="user-question-count-text">
+        <%= sklonenie(@questions_count, 'вопрос', 'вопроса', 'вопросов') %>
+      </div>
+    </div>
+    <div class="column-1-3">
+      <div class="user-question-count-number"><%= @answers_count %></div>
+      <div class="user-question-count-text">
+        <%= sklonenie(@answers_count, 'ответ', 'ответа', 'ответов') %>
+      </div>
+    </div>
+    <div class="column-1-3">
+      <div class="user-question-count-number"><%= @unanswered_count %></div>
+      <div class="user-question-count-text">
+        <%= sklonenie(@unanswered_count, 'безответный', 'безответного', 'безответных') %>
+      </div>
+    </div>
 </div>
 
 <%# Блок с формой для задавания пользователю вопроса %>
