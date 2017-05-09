@@ -16,6 +16,8 @@ gem 'jquery-rails'
 
 gem 'email_validator'
 
+gem 'rails_12factor'
+
 gem 'uglifier'
 
 group :production do
