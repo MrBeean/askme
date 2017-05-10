@@ -11,11 +11,12 @@ class User < ApplicationRecord
   # Проверки
   before_validation :username_downcase!
 
-  validates :username, :email, presence: true
+  validates :username, :email, :background_color, presence: true
   validates :email, :username, uniqueness: true
   validates :email, email: true
   validates :username, length: { maximum: 40 }
   validates :username, format: { with: /\A[\w]*\z/, message: 'only allows letters, numbers & _' }
+  validates :background_color, format: { with: /\A\#[\w]*\z/ }
 
   attr_accessor :password
 

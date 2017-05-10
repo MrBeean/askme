@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170504052520) do
+ActiveRecord::Schema.define(version: 20170510174137) do
 
   create_table "questions", force: :cascade do |t|
     t.string "text"
@@ -21,6 +21,12 @@ ActiveRecord::Schema.define(version: 20170504052520) do
     t.index ["user_id"], name: "index_questions_on_user_id"
   end
 
+# Could not dump table "sqlite_stat1" because of following StandardError
+#   Unknown type '' for column 'tbl'
+
+# Could not dump table "sqlite_stat4" because of following StandardError
+#   Unknown type '' for column 'tbl'
+
   create_table "users", force: :cascade do |t|
     t.string "name"
     t.string "username"
@@ -30,6 +36,7 @@ ActiveRecord::Schema.define(version: 20170504052520) do
     t.string "password_hash"
     t.string "password_salt"
     t.string "avatar_url"
+    t.string "background_color", default: "#005a55"
     t.index ["username"], name: "index_users_on_username", unique: true
   end
 
