@@ -52,10 +52,23 @@
         <%= f.password_field :password_confirmation, class: 'form-text-field' %>
       </div>
 
+      <div class="buffer-top-large buffer-bottom">
+        Выберите цвет фона блока с аватаркой:
+      </div>
+
+      <% color_picker.each do |key, value| %>
+        <div class="form-field">
+          <%= f.radio_button :background_color, value %>
+          <%= label :background_color, key %>
+          <div class="color_box" style="background-color: <%= value %>"></div>
+        </div>
+      <% end %>
+
       <div class="form-action buffer-top">
         <%= f.submit 'Сохранить', class: 'button button-dark button-small' %>
       </div>
-    <% end %>
+
+  <% end %>
 
     <%# Подробнее про помощники для создания форм: %>
     <%# http://guides.rubyonrails.org/form_helpers.html %>
