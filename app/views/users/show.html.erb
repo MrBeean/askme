@@ -1,8 +1,11 @@
 <%# В шаблоне show мы пишем html-код для вывода внутреннго содержимого %>
 <%# страницы пользователя, которая будет показана по адресу /users/1 %>
 
+<% background_style = 'background-color: #730E15' %>
+
 <%# Блок с информацией о пользователей %>
-<div class="user-header text-center">
+<div class="user-header text-center" style="<%= background_style if current_user.username == @user
+    .username %>"
   <h1 class="title-medium">
     <%# Выводим имя пользователя %>
     <%= @user.name %>
@@ -46,7 +49,7 @@
     <div class="column-1-3">
       <div class="user-question-count-number"><%= @unanswered_count %></div>
       <div class="user-question-count-text">
-        <%= sklonenie(@unanswered_count, 'безответный', 'безответного', 'безответных') %>
+        <%= sklonenie(@unanswered_count, 'безответный', 'безответных', 'безответных') %>
       </div>
     </div>
 </div>
