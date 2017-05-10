@@ -8,4 +8,16 @@ module UsersHelper
       royalblue: '#3e64d6'
     }
   end
+
+  def background_color
+    if
+      current_user == nil
+      return ""
+    elsif
+      current_user.username == @user.username
+      return "background-color: #{@user.background_color}"
+    else
+      return ""
+    end
+  end
 end
