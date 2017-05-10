@@ -4,7 +4,7 @@
 <% background_style = 'background-color: #730E15' %>
 
 <%# Блок с информацией о пользователей %>
-<div class="user-header text-center" style="<%= background_style if current_user.username == @user.username %>"
+<div class="user-header text-center" style="<%= background_style if current_user.username == @user.username %>">
   <h1 class="title-medium">
     <%# Выводим имя пользователя %>
     <%= @user.name %>
