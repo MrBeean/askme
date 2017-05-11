@@ -16,7 +16,8 @@ class User < ApplicationRecord
   validates :email, email: true
   validates :username, length: { maximum: 40 }
   validates :username, format: { with: /\A[\w]*\z/, message: 'only allows letters, numbers & _' }
-  validates :background_color, format: { with: /\A\#[\w]*\z/ }
+  validates :background_color, inclusion: { in: %w(#005a55 #8f9a04 #6e9628 #0000b7 #3e64d6),
+                                            message: "%{value} is not a valid color" }
 
   attr_accessor :password
 
