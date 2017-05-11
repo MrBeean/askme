@@ -56,7 +56,7 @@
         Выберите цвет фона блока с аватаркой:
       </div>
 
-      <% color_picker.each do |key, value| %>
+      <% @user.available_colors.each do |key, value| %>
         <div class="form-field">
           <%= f.radio_button :background_color, value %>
           <%= label :background_color, key %>

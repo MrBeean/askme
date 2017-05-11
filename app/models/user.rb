@@ -5,6 +5,16 @@ class User < ApplicationRecord
   ITERATIONS = 20_000
   DIGEST = OpenSSL::Digest::SHA256.new
 
+  # Цвета, которые будут использованы для подложки у пользователя
+  # TODO Убрать в таблицу-справочник, связать с пользователем
+  COLORS = {
+    seagreen: '#005a55',
+    yellow: '#8f9a04',
+    yellowgreen: '#6e9628',
+    darkblue: '#0000b7',
+    royalblue: '#3e64d6'
+  }
+
   # Связь
   has_many :questions
 
@@ -16,7 +26,7 @@ class User < ApplicationRecord
   validates :email, email: true
   validates :username, length: { maximum: 40 }
   validates :username, format: { with: /\A[\w]*\z/, message: 'only allows letters, numbers & _' }
-  validates :background_color, inclusion: { in: %w(#005a55 #8f9a04 #6e9628 #0000b7 #3e64d6),
+  validates :background_color, inclusion: { in: COLORS.values,
                                             message: "%{value} is not a valid color" }
 
   attr_accessor :password
@@ -80,5 +90,9 @@ class User < ApplicationRecord
 
   def username_downcase!
     self.username.downcase!
+  end
+
+  def available_colors
+    COLORS
   end
 end
