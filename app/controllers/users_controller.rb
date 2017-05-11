@@ -51,6 +51,11 @@ class UsersController < ApplicationController
     @unanswered_count = @questions_count - @answers_count
   end
 
+  def destroy
+    current_user.destroy
+    redirect_to root_url, notice: 'Пользователь удалён!'
+  end
+
   private
   # Явно задаем список разрешенных параметров для модели User. Мы говорим, что
   # у хэша params должен быть ключ :user. Значением этого ключа может быть хэш с

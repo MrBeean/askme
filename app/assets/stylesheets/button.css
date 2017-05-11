@@ -19,6 +19,12 @@
   color: #fff;
 }
 
+.button-red {
+  background: #9f0000;
+  color: #fff;
+  float: right;
+}
+
 .button-light {
   background: #00948a;
   color: #fff;

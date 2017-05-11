@@ -68,9 +68,11 @@
         <%= f.submit 'Сохранить', class: 'button button-dark button-small' %>
       </div>
 
-  <% end %>
+    <% end %>
 
-    <%# Подробнее про помощники для создания форм: %>
-    <%# http://guides.rubyonrails.org/form_helpers.html %>
+    <% if @user == current_user %>
+      <%= link_to "Удалить аккаунт!?", current_user, method: :delete,
+                  data: { confirm: "Уверены?" }, class: 'button button-red text-center' %>
+    <% end %>
   </div>
 </div>
