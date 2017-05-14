@@ -17,7 +17,6 @@ class User < ApplicationRecord
 
   # Связь
   has_many :questions, dependent: :destroy
-  has_many :questions, foreign_key: "author_id", dependent: :destroy
 
   # Проверки
   before_validation :username_downcase!
