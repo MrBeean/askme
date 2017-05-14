@@ -22,7 +22,7 @@
     </div>
     <div class="question-inquirer">
       <%= link_to "@#{question.author.username}",
-                  edit_user_path(question.author) if question.author_id.present? %>
+                  user_path(question.author) if question.author_id.present? %>
     </div>
   </div>
 
