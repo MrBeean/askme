@@ -20,6 +20,10 @@ gem 'rails_12factor'
 
 gem 'uglifier'
 
+gem 'figaro'
+
+gem 'recaptcha', require: 'recaptcha/rails'
+
 group :production do
   gem 'pg'
 end
