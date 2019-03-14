@@ -25,8 +25,8 @@
 # RubyMine
 .idea
 
-# rvmrc
-.rvmrc
+# gemset
+.ruby-gemset
 
 # Ignore application configuration
 /config/application.yml
