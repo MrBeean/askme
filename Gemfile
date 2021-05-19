@@ -10,7 +10,7 @@ end
 gem 'rails', '~> 5.1', '>= 5.1.6.2'
 
 # Use Puma as the app server
-gem 'puma', '~> 3.12'
+gem 'puma', '~> 4.3'
 
 gem 'jquery-rails'
 
